@@ -1,9 +1,9 @@
-FROM tiangolo/uwsgi-nginx-flask:python3.8
+FROM python:3.9-slim-buster
 
-COPY ./app /app
-
-# 设定当前的工作目录
 WORKDIR /app
 
-RUN pip install --user -r requirements.txt
+COPY . /app
 
+RUN pip install --no-cache-dir Flask==2.0.2
+
+CMD ["python", "main.py"]
