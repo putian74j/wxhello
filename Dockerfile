@@ -1,8 +1,8 @@
 FROM tiangolo/uwsgi-nginx-flask:python3.12
 
-# COPY ./app /app
+COPY ./app /app
 
-# WORKDIR /app
+WORKDIR /app
 # # RUN pip install --no-cache-dir akshare
 
 # RUN pip install -r requirements.txt
@@ -10,13 +10,3 @@ FROM tiangolo/uwsgi-nginx-flask:python3.12
 # 安装依赖到指定的/install文件夹
 # 选用国内镜像源以提高下载速度
 RUN pip install --user -r requirements.txt
-
-# COPY . /app
-
-COPY ./app /app
-# 设定当前的工作目录
-WORKDIR /app
-
-
-
-# CMD ["python3", "main.py"]
