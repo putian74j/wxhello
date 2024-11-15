@@ -18,3 +18,4 @@ WORKDIR /app
 # 选用国内镜像源以提高下载速度
 RUN pip install --user -r requirements.txt
 
+CMD ["python3", "main.py"]
